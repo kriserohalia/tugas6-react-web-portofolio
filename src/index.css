@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    @apply font-bold border-b-2 border-orange-300  mt-8 p-4 text-2xl
+}
+
+p {
+    @apply my-2 p-3
+}
+ h2 {
+    @apply font-semibold pl-2 pt-3
+ }
+
+ ul li {
+    @apply pl-2 my-1 mx-8
+ }
