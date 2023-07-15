@@ -16,7 +16,7 @@ export default function Home(){
 
                     <div className="w-full self-end px-4 lg:w-1/2">
                         <div className="  relative mt-10">
-                            <img src="./src/assets/picture.png" alt="picure" className="max-w-full mx-auto" />
+                            <img src="/picture.png" alt="picure" className="max-w-full mx-auto" />
                         </div>
                     </div>
             </div>
