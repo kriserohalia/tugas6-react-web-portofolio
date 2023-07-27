@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import Project from "../components/Project";
+import { ThemeContext } from "../App";
 
 export default function Portofolio(){
+    const {theme} = useContext(ThemeContext)
 
     const projects=[
         {
@@ -24,13 +27,13 @@ export default function Portofolio(){
     ];
 
     return (
-        <>
+        <div className={`${theme === 'dark' ? 'text-white': 'text-black'}`}>
         <h1 className="tex-base font-bold md:text-2xl p-4 m-10">Several Projects</h1>
         {projects.map((project)=>(
             <Project key={projects.id} 
                 {...project}/>
         ))}
-         </>
+         </div>
     )
 }
 

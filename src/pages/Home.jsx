@@ -1,16 +1,20 @@
+import { useContext } from "react";
 import Cv from "./Cv";
 import Portofolio from "./Portofolio";
+import { ThemeContext } from "../App";
 
 export default function Home(){ 
+    const { theme } = useContext(ThemeContext)
+
     return(
-        <>
-    <section id="home" className="pt-6">
+        <div className={`${theme === "dark" ? "text-white" : "text-black"}`}>
+    <section id="home" >
         <div className="container">
             <div className="flex flex-wrap">
                 <div className="w-full self-center px-4 lg:w-1/2">
-                    <h1 className="tex-base font-semibold text-primary md:text-xl">Hey There 👋,<span className="block font-bold text-dark text-4xl mt-1 lg:text-5xl"> I am Krise Rohalia</span></h1>
-                    <h2 className="block font-bold text-dark text-3xl"> Junior Programmer</h2>
-                    <p className="font-medium text-secondary mb-10 leading-relaxed">Software development enthusiast that has a high learning curve, seeks the best practices, stays up-to-date on emerging technologies, and is eager to learn something new.</p>
+                    <h1 className="tex-base font-semibold md:text-xl">Hello Everyone👋,<span className="block font-bold  text-4xl mt-1 lg:text-5xl"> I am Krise Rohalia</span></h1>
+                    <h2 className="block font-bold text-3xl"> Junior Programmer</h2>
+                    <p className="font-medium mb-10 leading-relaxed">Software development enthusiast that has a high learning curve, seeks the best practices, stays up-to-date on emerging technologies, and is eager to learn something new.</p>
                     <a href="https://www.instagram.com/kriserhl/" className="text-base font-semibold text-white bg-primary py-3 px-8 rounded-40 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
                 </div>
 
@@ -63,7 +67,7 @@ export default function Home(){
 
   
               </div>
-  
-      </>   
+              </div>
+    
     ); 
   }

@@ -1,6 +1,11 @@
+import { useContext } from "react"
+import { ThemeContext } from "../App"
+
 export default function Cv(){
+    const { theme } = useContext(ThemeContext)
+
     return (
-        <div className="block justify-center p-4 m-10">
+        <div className={`${theme === "dark" ? "text-white" : "text-black"}`}>
             <h1 className="cv">P R O F I L E</h1>
             <p>I am a final year student at Pasim National University, majoring in Diploma III Informatics Management.
             I am highly motivated, honest, and able to work individually and collaborate with a team. Able to think
