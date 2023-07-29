@@ -2,11 +2,13 @@
 import {Link} from "react-router-dom"
 import {CgWebsite} from "react-icons/cg"
 import { useContext } from "react";
-import { ThemeContext } from "../App";
-import { MdDarkMode, MdOutlineLightMode } from "react-icons/md"
+import { LanguageContext, ThemeContext, strings } from "../App";
+import { MdDarkMode, MdOutlineLightMode, MdOutlineLanguage } from "react-icons/md"
+import { NavLink } from "react-router-dom";
 
 export default function Header(){
     const {theme, setTheme} = useContext(ThemeContext)
+    const {language, setLanguage} = useContext(LanguageContext)
 
     return(
         <header className="flex justify-between sticky top-0 left-0 right-0 p-8 shadow-lg shadow-white-500/50   ">
@@ -17,11 +19,11 @@ export default function Header(){
                  </div>
             </Link>
             <div className={`${theme === "dark" ? "text-white" : "text-black"}`}>
-        <nav className="flex sm:justify-center  text-xl font-bold">
+        <NavLink className="flex sm:justify-center  text-xl font-bold">
             {[
-                ['Home', '/'],
-                ['CV', '/cv'],
-                ['Portofolio', '/portofolio'],
+                [strings[language].home, '/'],
+                [strings[language].cv, '/cv'],
+                [strings[language].portofolio, '/portofolio'],
             ].map(([title, url]) => (
                 <a href={url} className="rounded-lg px-3 py-2  font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
             ))}
@@ -30,7 +32,10 @@ export default function Header(){
                 theme === 'light' ?  <MdDarkMode size={24}/> : <MdOutlineLightMode size={24} /> 
                 }
                 </button>
-            </nav>
+                <button onClick={()=> setLanguage(language === "en" ? "id": "en")}>
+                <MdOutlineLanguage/>
+                </button>
+            </NavLink>
             </div>
             </header>
             
