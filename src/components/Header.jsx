@@ -26,19 +26,19 @@ export default function Header(){
             <div className={`${theme === "dark" ? "text-white" : "text-black"}`}>
         <NavLink className="flex sm:justify-center text-xl font-bold">
             {[
-                [<AiFillHome />, '/'],
-                [<GrResume/>, '/cv'],
-                [<AiFillProject/>, '/portofolio'],
+                [<AiFillHome size={20}/>, '/'],
+                [<GrResume size={20}/>, '/cv'],
+                [<AiFillProject size={20}/>, '/portofolio'],
             ].map(([title, url]) => (
                 <a href={url} className="rounded-lg px-2 py-2  font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
             ))}
                 <button className='mt-2-mr-16 px-2 py-2 ' onClick={()=> setTheme(theme === 'light' ? 'dark' : 'light')}>
                 {
-                theme === 'light' ?  <MdDarkMode size={24}/> : <MdOutlineLightMode size={24} /> 
+                theme === 'light' ?  <MdDarkMode size={20}/> : <MdOutlineLightMode size={20} /> 
                 }
                 </button>
                 <button className="mt-2-mr-16 px-2 py-2 " onClick={()=> setLanguage(language === "en" ? "id": "en")}>
-                <MdOutlineLanguage/>
+                <MdOutlineLanguage size={20}/>
                 </button>
             </NavLink>
             </div>
