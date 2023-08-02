@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import Project from "../components/Project";
-import { ThemeContext } from "../App";
+import { LanguageContext, ThemeContext, strings } from "../App";
 
 export default function Portofolio(){
     const {theme} = useContext(ThemeContext)
+    const {language} = useContext(LanguageContext)
 
     const projects=[
         {
             id:1,
-            tittle:"Weather Forecasting App",
+            tittle:[strings[language].weathering],
             description:"Aplikasi ini merupakan prakiraan cuaca yang bisa digunakan degan menginputkan nama kota yang ingin dicari. Menampilkan beberapa informasi seperti suhu udara, kecepatan anagin dan perkiraan cuaca berdasarkan awan. Dibuat dengan menggunakan HTML, CSS, dan Javascript dasar.  ",
             link:"https://github.com/kriserohalia/PROJEK-WEB_KRISE-ROHALIA",
         },
@@ -28,7 +29,7 @@ export default function Portofolio(){
 
     return (
         <div className={`${theme === 'dark' ? 'text-white': 'text-black'}`}>
-        <h1 className="tex-base font-bold md:text-2xl p-4 m-10">Several Projects</h1>
+        <h1 className="tex-base font-bold md:text-2xl p-4 m-10">{strings[language].sev}</h1>
         {projects.map((project)=>(
             <Project key={projects.id} 
                 {...project}/>
